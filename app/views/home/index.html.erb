@@ -1,5 +1,13 @@
 <h1>Ballpark note</h1>
 <p>野球観戦の思い出を記録しよう</p>
-<%= link_to "ログイン", '#' %>
-<%= link_to "新規登録", '#' %>
 
+<% if user_signed_in? %>
+  <p>ようこそ！<%= current_user.email %>さん</p>
+  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+
+<% else %>
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path %>
+<% end %>
+
+  
