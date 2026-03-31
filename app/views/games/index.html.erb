@@ -1,0 +1,9 @@
+<h1>観戦記録一覧</h1>
+
+<% @games.each do |game| %>
+  <div>
+    <p><%= game.watched_date %></p>
+    <p><%= game.stadium %></p>
+    <p><%= game.home_team %><%= game.hometeam_score %> - <%= game.visitor_team %><%= game.visitorteam_score %></p>
+  </div>
+<% end %>  

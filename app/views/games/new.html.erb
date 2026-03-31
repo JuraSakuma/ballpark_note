@@ -1,0 +1,52 @@
+<h1>観戦記録を追加</h1>
+
+<%= form_with model: @game do |f| %>
+
+  <div>
+    <%= f.label :home_team, "ホームチーム" %>
+    <%= f.text_field :home_team %>
+  </div>
+  
+  <div>
+    <%= f.label :visitor_team, "ビジターチーム" %>
+    <%= f.text_field :visitor_team %>
+  </div>
+
+  <div>
+    <%= f.label :hometeam_score, "ホームチームの点数" %>
+    <%= f.number_field :hometeam_score %>
+  </div>
+
+  <div>
+    <%= f.label :visitorteam_score, "ビジターチームの点数" %>
+    <%= f.number_field :visitorteam_score %>
+  </div>
+
+  <div>
+    <%= f.label :watched_date, "観戦日" %>
+    <%= f.date_field :watched_date %>
+  </div>
+
+  <div>
+    <%= f.label :stadium, "球場" %>
+    <%= f.text_field :stadium %>
+  </div>
+
+  <div>
+    <%= f.label :hero_player, "ヒーロー選手" %>
+    <%= f.text_field :hero_playe %>
+  </div>
+
+  <div>
+    <%= f.label :drink_count, "飲んだ数" %>
+    <%= f.number_field :drink_count %> 
+  </div>
+
+  <div>
+    <%= f.label :memo, "メモ" %>
+    <%= f.text_area :memo %>
+  </div>
+
+  <%= f.submit "保存する" %>
+
+<% end %>
