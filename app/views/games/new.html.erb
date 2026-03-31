@@ -14,14 +14,18 @@
         <div class="row g-3">
           <div class="col-md-6">
             <div class="mb-3">
-              <%= f.label :home_team, "ホームチーム", class: "form-label fw-bold" %>
-              <%= f.text_field :home_team, class: "form-control form-control-lg" %>
+             <%= f.label :home_team, class: "form-label fw-bold" do %>
+               ホームチーム <span class="badge bg-danger ms-1" style="font-size: 0.6rem;">必須</span>
+              <% end %>
+              <%= f.select :home_team, [["阪神タイガース", "阪神タイガース"], ["横浜DeNAベイスターズ", "横浜DeNAベイスターズ"], ["読売ジャイアンツ", "読売ジャイアンツ"], ["中日ドラゴンズ", "中日ドラゴンズ"], ["広島東洋カープ", "広島東洋カープ"], ["東京ヤクルトスワローズ", "東京ヤクルトスワローズ"], ["福岡ソフトバンクホークス", "福岡ソフトバンクホークス"], ["北海道日本ハムファイターズ", "北海道日本ハムファイターズ"], ["オリックス・バファローズ", "オリックス・バファローズ"], ["東北楽天ゴールデンイーグルス", "東北楽天ゴールデンイーグルス"], ["埼玉西武ライオンズ", "埼玉西武ライオンズ"], ["千葉ロッテマリーンズ", "千葉ロッテマリーンズ"]], { include_blank: "選択して下さい" }, { class: "form-select form-select-lg" } %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="mb-3">
-              <%= f.label :visitor_team, "ビジターチーム", class: "form-label fw-bold" %>
-              <%= f.text_field :visitor_team, class: "form-control form-control-lg" %>
+             <%= f.label :visitor_team, class: "form-label fw-bold" do %>
+               ビジターチーム<span class="badge bg-danger ms-1" style="font-size: 0.6rem;">必須</span>
+              <% end %>
+              <%= f.select :visitor_team, [["阪神タイガース", "阪神タイガース"], ["横浜DeNAベイスターズ", "横浜DeNAベイスターズ"], ["読売ジャイアンツ", "読売ジャイアンツ"], ["中日ドラゴンズ", "中日ドラゴンズ"], ["広島東洋カープ", "広島東洋カープ"], ["東京ヤクルトスワローズ", "東京ヤクルトスワローズ"], ["福岡ソフトバンクホークス", "福岡ソフトバンクホークス"], ["北海道日本ハムファイターズ", "北海道日本ハムファイターズ"], ["オリックス・バファローズ", "オリックス・バファローズ"], ["東北楽天ゴールデンイーグルス", "東北楽天ゴールデンイーグルス"], ["埼玉西武ライオンズ", "埼玉西武ライオンズ"], ["千葉ロッテマリーンズ", "千葉ロッテマリーンズ"]], { include_blank: "選択して下さい" }, { class: "form-select form-select-lg" } %>
             </div>
           </div>
         </div>
@@ -29,13 +33,17 @@
         <div class="row g-3">
           <div class="col-md-6">
             <div class="mb-3">
-              <%= f.label :hometeam_score, "ホームチームの点数", class: "form-label fw-bold" %>
+              <%= f.label :hometeam_score, class: "form-label fw-bold" do %>
+               ホームチームの点数 <span class="badge bg-danger ms-1" style="font-size: 0.6rem;">必須</span>
+              <% end %>
               <%= f.number_field :hometeam_score, class: "form-control form-control-lg" %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="mb-3">
-              <%= f.label :visitorteam_score, "ビジターチームの点数", class: "form-label fw-bold" %>
+              <%= f.label :visitorteam_score, class: "form-label fw-bold" do %>
+                ビジターチームの点数 <span class="badge bg-danger ms-1" style="font-size: 0.6rem;">必須</span>
+              <% end %>
               <%= f.number_field :visitorteam_score, class: "form-control form-control-lg" %>
             </div>
           </div>
@@ -44,14 +52,18 @@
         <div class="row g-3">
           <div class="col-md-6">
             <div class="mb-3">
-              <%= f.label :watched_date, "観戦日", class: "form-label fw-bold" %>
+              <%= f.label :watched_date, class: "form-label fw-bold" do %>
+                観戦日 <span class="badge bg-danger ms-1" style="font-size: 0.6rem;">必須</span>
+              <% end %>
               <%= f.date_field :watched_date, class: "form-control form-control-lg" %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="mb-3">
-              <%= f.label :stadium, "球場", class: "form-label fw-bold" %>
-              <%= f.text_field :stadium, class: "form-control form-control-lg" %>
+             <%= f.label :stadium, class: "form-label fw-bold" do %>
+               球場<span class="badge bg-danger ms-1" style="font-size: 0.6rem;">必須</span>
+              <% end %>
+              <%= f.select :stadium, [["阪神甲子園球場", "阪神甲子園球場"], ["横浜スタジアム", "横浜スタジアム"], ["東京ドーム", "東京ドーム"], ["バンテリンドーム", "バンテリンドーム"], ["MAZDA Zoom-Zoom スタジアム広島", "MAZDA Zoom-Zoom スタジアム広島"], ["明治神宮野球場", "明治神宮野球場"], ["みずほPayPayドーム", "みずほPayPayドーム"], ["エスコンフィールドHOKKAIDO", "エスコンフィールドHOKKAIDO"], ["京セラドーム大阪", "京セラドーム大阪"], ["楽天モバイルパーク宮城", "楽天モバイルパーク宮城"], ["ベルーナドーム", "ベルーナドーム"], ["ZOZOマリンスタジアム", "ZOZOマリンスタジアム"]], { include_blank: "選択して下さい" }, { class: "form-select form-select-lg" } %>
             </div>
           </div>
         </div>

@@ -17,10 +17,16 @@
       <div class="text-center py-3 mb-4" style="background: #f8f9fa; border-radius: 8px;">
         <p class="fw-bold fs-3 m-0">
           <%= @game.home_team %>
-          <span class="mx-3 fw-bold" style="color: #FF4500; font-size: 2rem;">
-            <%= @game.hometeam_score %> - <%= @game.visitorteam_score %>
+          <span class="mx-3 fw-bold" style="font-size: 2rem;">
+          <span style="color: <%= @game.hometeam_score > @game.visitorteam_score ? '#007BFF' : 'black' %>;">
+            <%= @game.hometeam_score %>
           </span>
-          <%= @game.visitor_team %>
+            -
+          <span style="color: <%= @game.visitorteam_score > @game.hometeam_score ? '#007BFF' : 'black' %>;">
+            <%= @game.visitorteam_score %>
+          </span>
+          </span>
+            <%= @game.visitor_team %>
         </p>
       </div>
 

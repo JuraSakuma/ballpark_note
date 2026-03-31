@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :authenticate_user!
 
   def index 
-    @games = current_user.games
+    @games = Game.order(watched_date: :asc)
   end
 
   def new
@@ -40,6 +40,7 @@ class GamesController < ApplicationController
     @game.destroy
     redirect_to games_path
   end
+
 
   private
 
