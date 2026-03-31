@@ -1,13 +1,54 @@
-<h1>Ballpark note</h1>
-<p>野球観戦の思い出を記録しよう</p>
+<div style="background: linear-gradient(135deg, #00BFFF 0%, #0099CC 100%); min-height: 60vh;" class="text-white d-flex align-items-center">
+  <div class="container text-center py-5">
+    <h1 class="display-2 fw-bold" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.3); letter-spacing: 2px;">
+      ⚾ Ballpark Note
+    </h1>
+    <p class="fs-3 fw-semibold mt-3" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
+      野球観戦の思い出を、記録しよう。
+    </p>
 
-<% if user_signed_in? %>
-  <p>ようこそ！<%= current_user.email %>さん</p>
-  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+    <div class="mt-4">
+      <% if user_signed_in? %>
+        <p class="fs-5">ようこそ！<%= current_user.email %>さん</p>
+        <%= link_to "観戦記録を見る →", games_path, class: "btn btn-light btn-lg fw-bold me-3 px-4", style: "color: #0099CC;" %>
+        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-outline-light btn-lg px-4" %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-light btn-lg fw-bold me-3 px-4", style: "color: #0099CC;" %>
+        <%= link_to "新規登録 →", new_user_registration_path, class: "btn fw-bold btn-lg px-4", style: "background: #FF4500; color: white; border: none;" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% else %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "新規登録", new_user_registration_path %>
-<% end %>
-
-  
+<div class="container py-5">
+  <h2 class="text-center fw-bold mb-4" style="color: #0099CC;">Ballpark Noteでできること</h2>
+  <div class="row g-4 text-center">
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body py-4">
+          <div class="fs-1 mb-3">⚾</div>
+          <h5 class="card-title fw-bold">観戦記録を残す</h5>
+          <p class="card-text text-muted">球場・スコア・ヒーロー選手まで記録できます</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body py-4">
+          <div class="fs-1 mb-3">🍺</div>
+          <h5 class="card-title fw-bold">思い出を振り返る</h5>
+          <p class="card-text text-muted">飲んだお酒の数まで記録して試合を振り返ろう</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body py-4">
+          <div class="fs-1 mb-3">📝</div>
+          <h5 class="card-title fw-bold">自分だけの野球日記</h5>
+          <p class="card-text text-muted">メモ機能で試合の感想を自由に書き残せます</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

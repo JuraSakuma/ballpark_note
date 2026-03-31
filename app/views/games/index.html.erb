@@ -1,12 +1,40 @@
-<h1>観戦記録一覧</h1>
-
-<%= link_to "新規作成", new_game_path %>
-
-<% @games.each do |game| %>
-  <div>
-    <p><%= game.watched_date %></p>
-    <p><%= game.stadium %></p>
-    <p><%= game.home_team %><%= game.hometeam_score %> - <%= game.visitor_team %><%= game.visitorteam_score %></p>
-    <%= link_to "詳細", game_path(game) %>
+<div style="background: #00BFFF;" class="py-3 mb-4">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="text-white fw-bold m-0">⚾ 観戦記録一覧</h1>
+    <%= link_to "＋ 新規作成", new_game_path, class: "btn fw-bold text-white", style: "background: #FF4500; border: none;" %>
+    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn fw-bold text-white", style: "background: #ccc; border: none;" %>
   </div>
-<% end %>  
+</div>
+
+<div class="container">
+  <% if @games.empty? %>
+    <div class="text-center py-5">
+      <p class="fs-4 text-muted">まだ観戦記録がありません</p>
+      <%= link_to "最初の記録を追加する →", new_game_path, class: "btn btn-lg fw-bold text-white", style: "background: #FF4500; border: none;" %>
+    </div>
+  <% else %>
+    <div class="row g-4">
+      <% @games.each do |game| %>
+        <div class="col-md-6">
+          <div class="card border-0 shadow h-100">
+            <div class="card-header fw-bold text-white" style="background: #00BFFF;">
+              <%= game.watched_date.strftime("%Y年%m月%d日") %> ｜ <%= game.stadium %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center fw-bold fs-4">
+                <%= game.home_team %>
+                <span class="mx-2" style="color: #FF4500;">
+                  <%= game.hometeam_score %> - <%= game.visitorteam_score %>
+                </span>
+                <%= game.visitor_team %>
+              </h5>
+            </div>
+            <div class="card-footer bg-white border-0 text-end">
+              <%= link_to "詳細を見る →", game_path(game), class: "btn btn-sm fw-bold text-white", style: "background: #00BFFF; border: none;" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

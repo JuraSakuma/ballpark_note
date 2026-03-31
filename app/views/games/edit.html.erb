@@ -1,52 +1,87 @@
-<h1>観戦記録を編集</h1>
-
-<%= form_with model: @game do |f| %>
-
-  <div>
-    <%= f.label :home_team, "ホームチーム" %>
-    <%= f.text_field :home_team %>
+<div style="background: #00BFFF;" class="py-3 mb-4">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="text-white fw-bold m-0">⚾ 観戦記録を編集</h1>
+    <%= link_to "詳細に戻る", game_path(@game), class: "btn btn-light fw-bold" %>
   </div>
-  
-  <div>
-    <%= f.label :visitor_team, "ビジターチーム" %>
-    <%= f.text_field :visitor_team %>
+</div>
+
+<div class="container">
+  <div class="card border-0 shadow-lg">
+    <div class="card-body p-4">
+
+      <%= form_with model: @game do |f| %>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :home_team, "ホームチーム", class: "form-label fw-bold" %>
+              <%= f.text_field :home_team, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :visitor_team, "ビジターチーム", class: "form-label fw-bold" %>
+              <%= f.text_field :visitor_team, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :hometeam_score, "ホームチームの点数", class: "form-label fw-bold" %>
+              <%= f.number_field :hometeam_score, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :visitorteam_score, "ビジターチームの点数", class: "form-label fw-bold" %>
+              <%= f.number_field :visitorteam_score, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :watched_date, "観戦日", class: "form-label fw-bold" %>
+              <%= f.date_field :watched_date, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :stadium, "球場", class: "form-label fw-bold" %>
+              <%= f.text_field :stadium, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :hero_player, "ヒーロー選手", class: "form-label fw-bold" %>
+              <%= f.text_field :hero_player, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.label :drink_count, "飲んだお酒の数", class: "form-label fw-bold" %>
+              <%= f.number_field :drink_count, class: "form-control form-control-lg" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :memo, "メモ", class: "form-label fw-bold" %>
+          <%= f.text_area :memo, class: "form-control", rows: 4 %>
+        </div>
+
+        <div class="d-grid mt-4">
+          <%= f.submit "更新する", class: "btn btn-lg fw-bold text-white", style: "background: #FF4500; border: none;" %>
+        </div>
+
+      <% end %>
+
+    </div>
   </div>
-
-  <div>
-    <%= f.label :hometeam_score, "ホームチームの点数" %>
-    <%= f.number_field :hometeam_score %>
-  </div>
-
-  <div>
-    <%= f.label :visitorteam_score, "ビジターチームの点数" %>
-    <%= f.number_field :visitorteam_score %>
-  </div>
-
-  <div>
-    <%= f.label :watched_date, "観戦日" %>
-    <%= f.date_field :watched_date %>
-  </div>
-
-  <div>
-    <%= f.label :stadium, "球場" %>
-    <%= f.text_field :stadium %>
-  </div>
-
-  <div>
-    <%= f.label :hero_player, "ヒーロー選手" %>
-    <%= f.text_field :hero_player %>
-  </div>
-
-  <div>
-    <%= f.label :drink_count, "飲んだ数" %>
-    <%= f.number_field :drink_count %> 
-  </div>
-
-  <div>
-    <%= f.label :memo, "メモ" %>
-    <%= f.text_area :memo %>
-  </div>
-
-  <%= f.submit "保存する" %>
-
-<% end %>
+</div>
