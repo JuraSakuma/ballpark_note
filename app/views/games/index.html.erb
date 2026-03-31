@@ -1,9 +1,12 @@
 <h1>観戦記録一覧</h1>
 
+<%= link_to "新規作成", new_game_path %>
+
 <% @games.each do |game| %>
   <div>
     <p><%= game.watched_date %></p>
     <p><%= game.stadium %></p>
     <p><%= game.home_team %><%= game.hometeam_score %> - <%= game.visitor_team %><%= game.visitorteam_score %></p>
+    <%= link_to "詳細", game_path(game) %>
   </div>
 <% end %>  

@@ -18,6 +18,28 @@ class GamesController < ApplicationController
     end
   end
 
+  def show
+    @game = current_user.games.find(params[:id])
+  end
+
+  def edit
+    @game = current_user.games.find(params[:id])
+  end
+
+  def update
+    @game = current_user.games.find(params[:id])
+    if @game.update(game_params)
+      redirect_to games_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @game = current_user.games.find(params[:id])
+    @game.destroy
+    redirect_to games_path
+  end
 
   private
 

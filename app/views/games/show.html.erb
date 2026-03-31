@@ -1,0 +1,13 @@
+<h1>野球記録詳細</h1>
+
+<p><%= @game.watched_date %></p>
+<p><%= @game.home_team %> <%= @game.hometeam_score %> - <%= @game.visitor_team %> <%= @game.visitorteam_score%></p>
+<p><%= @game.stadium %></p>
+<p><%= @game.hero_player %></p>
+<p><%= @game.drink_count %></p>
+<p><%= @game.memo %></p>
+
+<%= link_to '編集する', edit_game_path(@game) %>
+<%= link_to "削除する", game_path(@game), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+<%= link_to "一覧に戻る", games_path %>
+
