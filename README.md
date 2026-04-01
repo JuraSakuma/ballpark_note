@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリ名
+**<h2>Ballpark Note<h2>**
+### 公開URL
+https://ballpark-note.onrender.com/
+## アプリを作った理由
+- RUNTEQに入学してから1ヶ月が経ち、学んだ知識をアウトプットしたいと思ったから
+- 一度ミニアプリを作成してみることで、今後のカリキュラムの取り組み方が変わるのではと思ったから
+- 自分自身が野球観戦をよくするので、観戦の思い出を手軽に記録・管理できるアプリを作りたいと考えた
 
-Things you may want to cover:
+## できること（機能一覧）
+- 試合結果（スコア）の記録・表示
+- 勝利チームのスコアを青色で強調表示
+- ヒーロー選手・飲んだお酒の数・メモの記録
+- 観戦記録の一覧・詳細表示
+- 観戦日の新しい順に並び替え
+- ログイン・ユーザー管理（Devise）
+## 技術スタック
+- バックエンド：Ruby on Rails
+- フロントエンド： HTML / CSS / Bootstrap 5
+- 認証： Devise
+- データベース：PostgreSQL 
+- デプロイ：Render 
+- バージョン管理：GitHub 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 今後の改善ポイント
+- 観戦写真の添付機能
+- お気に入り球団登録機能
+- ユーザー情報変更機能
+## デプロイ
+- **プラットフォーム**: Render
+- **データベース**: Render PostgreSQL
+- **公開URL**: https://ballpark-note.onrender.com/
